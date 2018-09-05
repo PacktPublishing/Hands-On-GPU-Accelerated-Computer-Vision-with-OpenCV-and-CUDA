@@ -1,6 +1,7 @@
 #include <memory>
 #include <iostream>
 #include <cuda_runtime.h>
+#include <stdio.h>
 
 // Main Program 
 

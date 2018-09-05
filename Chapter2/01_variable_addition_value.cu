@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cuda.h>
 #include <cuda_runtime.h>
+#include <stdio.h>
 
 //Definition of kernel function to add two variables
 __global__ void gpuAdd(int d_a, int d_b, int *d_c) {
