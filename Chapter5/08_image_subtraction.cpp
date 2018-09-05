@@ -18,7 +18,7 @@ int main (int argc, char* argv[])
     d_result1.download(h_result1);
     cv::imshow("Image1 ", h_img1);
     cv::imshow("Image2 ", h_img2);
-    cv::imshow("Result addition ", h_result1);
+    cv::imshow("Result Subtraction ", h_result1);
     cv::imwrite("images/result_add.png", h_result1);
     cv::waitKey();
     return 0;
