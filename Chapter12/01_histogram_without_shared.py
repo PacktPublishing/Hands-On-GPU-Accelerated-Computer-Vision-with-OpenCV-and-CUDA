@@ -27,7 +27,6 @@ __global__ void atomic_hist(int *d_b, int *d_a, int SIZE)
 atomic_hist = mod.get_function("atomic_hist")
 import cv2
 h_img = cv2.imread("cameraman.tif",0)
-
 h_a=h_img.flatten()
 h_a=h_a.astype(numpy.int)
 h_result = numpy.zeros(256).astype(numpy.int)
@@ -49,9 +48,6 @@ print("%fs" % (secs))
 plt.stem(h_result)
 plt.xlim([0,256])
 plt.title("Histogram on GPU")
-
-
-
 start = cv2.getTickCount()
 hist = cv2.calcHist([h_img],[0],None,[256],[0,256])
 end = cv2.getTickCount()
