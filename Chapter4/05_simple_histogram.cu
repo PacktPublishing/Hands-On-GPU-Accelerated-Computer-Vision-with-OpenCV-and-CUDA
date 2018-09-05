@@ -8,7 +8,6 @@ __global__ void histogram_without_atomic(int *d_b, int *d_a)
 {
 	int tid = threadIdx.x + blockDim.x * blockIdx.x;
 	int item = d_a[tid];
-	
 	if (tid < SIZE)
 	{
 		d_b[item]++;
@@ -20,7 +19,6 @@ __global__ void histogram_atomic(int *d_b, int *d_a)
 {
 	int tid = threadIdx.x + blockDim.x * blockIdx.x;
 	int item = d_a[tid];
-	
 	if (tid < SIZE)
 	{
 		atomicAdd(&(d_b[item]), 1);
@@ -56,8 +54,8 @@ int main()
 	
 	// launch the kernel
 	
-	//histogram_without_atomic << <((SIZE+NUM_BIN-1) / NUM_BIN), NUM_BIN >> >(d_b, d_a);
-	histogram_atomic << <((SIZE+NUM_BIN-1) / NUM_BIN), NUM_BIN >> >(d_b, d_a);
+	histogram_without_atomic << <((SIZE+NUM_BIN-1) / NUM_BIN), NUM_BIN >> >(d_b, d_a);
+	//histogram_atomic << <((SIZE+NUM_BIN-1) / NUM_BIN), NUM_BIN >> >(d_b, d_a);
 		
 
 	// copy back the sum from GPU
