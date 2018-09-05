@@ -29,7 +29,7 @@ int main()
 	for (int i = 0; i < N; i++) {
 		h_in[i] = float(i);
 	}
-	//Define CUDA Arrat
+	//Define CUDA Array
 	cudaArray *cu_Array;
 	cudaMallocArray(&cu_Array, &textureRef.channelDesc, N, 1);
 	//Copy data to CUDA Array

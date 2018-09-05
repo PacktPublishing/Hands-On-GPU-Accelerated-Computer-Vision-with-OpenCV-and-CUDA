@@ -26,9 +26,10 @@ int main(int argc, char **argv)
 	int h_a[SIZE];
 	const int ARRAY_BYTES = SIZE * sizeof(int);
 
-	// declare, allocate, and zero out GPU memory
+	// declare and allocate GPU memory
 	int * d_a;
 	cudaMalloc((void **)&d_a, ARRAY_BYTES);
+	//Initialize GPU memory to zero
 	cudaMemset((void *)d_a, 0, ARRAY_BYTES);
 
 	gpu_increment_without_atomic << <NUM_THREADS / BLOCK_WIDTH, BLOCK_WIDTH >> >(d_a);

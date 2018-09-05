@@ -73,9 +73,9 @@ int main()
 	//Define grid and block dimensions
 	dim3 dimGrid(size / TILE_SIZE, size / TILE_SIZE, 1);
 	dim3 dimBlock(TILE_SIZE, TILE_SIZE, 1);
-	gpu_Matrix_Mul_nonshared << <dimGrid, dimBlock >> > (d_a, d_b, d_result, size);
+	//gpu_Matrix_Mul_nonshared << <dimGrid, dimBlock >> > (d_a, d_b, d_result, size);
 
-	//gpu_Matrix_Mul_shared << <dimGrid, dimBlock >> > (d_a, d_b, d_result, size);
+	gpu_Matrix_Mul_shared << <dimGrid, dimBlock >> > (d_a, d_b, d_result, size);
 
 	cudaMemcpy(h_result, d_result, size*size * sizeof(int),	cudaMemcpyDeviceToHost);
 	printf("The result of Matrix multiplication is: \n");
