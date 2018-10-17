@@ -12,18 +12,18 @@ Computer vision has been revolutionizing a wide range of industries, and OpenCV 
 
 This book covers the following exciting features:
 Understand how to access GPU device properties and capabilities from CUDA programs
+<ul>
+    <li>Learn how to accelerate searching and sorting algorithms</li>
+    
+<li>Detect shapes such as lines and circles in images</li>
 
-Learn how to accelerate searching and sorting algorithms
+<li>Explore object tracking and detection with algorithms</li>
 
-Detect shapes such as lines and circles in images
+<li>Process videos using different video analysis techniques in Jetson TX1</li>
 
-Explore object tracking and detection with algorithms
+<li>Access GPU device properties from the PyCUDA program</li>
 
-Process videos using different video analysis techniques in Jetson TX1
-
-Access GPU device properties from the PyCUDA program
-
-Understand how kernel execution works 
+<li>Understand how kernel execution works </li>
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789348293) today!
 
