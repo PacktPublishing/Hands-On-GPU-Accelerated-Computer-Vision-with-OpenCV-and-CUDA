@@ -36,7 +36,7 @@ __global__ void gpu_Matrix_Mul_shared(float *d_a, float *d_b, float *d_c, const 
 		shared_b[threadIdx.y][threadIdx.x] = d_b[(i*TILE_SIZE + threadIdx.y) * size + col];
 		__syncthreads(); 
 		for (int j = 0; j<TILE_SIZE; j++)
-			d_c[row*size + col] += shared_a[threadIdx.x][j] * shared_b[j][threadIdx.y];
+			d_c[row*size + col] += shared_a[threadIdx.y][j] * shared_b[j][threadIdx.x];
 		__syncthreads(); 
 
 	}
