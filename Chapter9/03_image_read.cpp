@@ -12,7 +12,7 @@ int main(int argc, char** argv)
   cout << "Could not open an image" << endl;
   return -1;
  }
-imshow("Image Read on Jetson TX1"; , img); 
+imshow("Image Read on Jetson TX1", img); 
 waitKey(0); 
 return 0;
 }

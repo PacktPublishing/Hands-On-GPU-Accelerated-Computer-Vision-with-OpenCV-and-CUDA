@@ -7,6 +7,7 @@ Created on Mon Aug 13 12:15:39 2018
 
 import pycuda.driver as drv
 from pycuda.compiler import SourceModule
+import pycuda.autoinit
 import numpy as np
 import cv2
 
