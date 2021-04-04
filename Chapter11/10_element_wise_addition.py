@@ -8,6 +8,7 @@ Created on Mon Aug 13 15:13:27 2018
 import pycuda.gpuarray as gpuarray
 import pycuda.driver as drv
 from pycuda.elementwise import ElementwiseKernel
+import pycuda.autoinit
 
 add = ElementwiseKernel(
         "float *d_a, float *d_b, float *d_c",
