@@ -61,8 +61,8 @@ int main(void) {
 		gpuAdd << <512, 512, 0, stream1 >> > (d_a1, d_b1, d_c1);
 		//Copy result back to host memory from device memory
 		cudaMemcpyAsync(h_c , d_c0, N * sizeof(int), cudaMemcpyDeviceToHost, stream0);
-		cudaMemcpyAsync(h_c + N, d_c1, N * sizeof(int), cudaMemcpyDeviceToHost, stream0);
-	
+		cudaMemcpyAsync(h_c + N, d_c1, N * sizeof(int), cudaMemcpyDeviceToHost, stream1);
+
 	cudaDeviceSynchronize();
 	cudaStreamSynchronize(stream0);
 	cudaStreamSynchronize(stream1);
@@ -94,9 +94,9 @@ int main(void) {
 	cudaFree(d_a0);
 	cudaFree(d_b0);
 	cudaFree(d_c0);
-	cudaFree(d_a0);
-	cudaFree(d_b0);
-	cudaFree(d_c0);
+	cudaFree(d_a1);
+	cudaFree(d_b1);
+	cudaFree(d_c1);
 	cudaFreeHost(h_a);
 	cudaFreeHost(h_b);
 	cudaFreeHost(h_c);
